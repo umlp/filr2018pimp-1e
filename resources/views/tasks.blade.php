@@ -14,13 +14,13 @@
                                 <td class="table-text"><div>1</div></td>
                                 <td class="table-text"><div>Google</div></td>
                                 <td>
-                                    <button type="submit" class="btn btn-outline-success">
+                                    <button type="button" class="btn btn-outline-success">
                                         <i class="fa fa-btn fa-trash"></i>
                                         Rank up
                                     </button>
                                 </td>
                                 <td>
-                                    <button type="submit" class="btn btn-outline-danger">
+                                    <button type="button" class="btn btn-outline-danger">
                                         <i class="fa fa-btn fa-trash"></i>
                                         Rank down
                                     </button>
