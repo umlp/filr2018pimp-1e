@@ -15,7 +15,6 @@
                                 <td class="table-text"><div>Google</div></td>
                                 <td>
                                     <button type="button" class="btn btn-outline-success">
-                                        <i class="fa fa-btn fa-trash"></i>
                                         Rank up
                                     </button>
                                 </td>
