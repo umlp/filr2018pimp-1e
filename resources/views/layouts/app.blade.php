@@ -39,7 +39,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
+        <li><a href="#">Accueil</a></li>
         <li><a href="#">Les stages</a></li>
         <li class="active"><a href="#">Les entreprises</a></li>
         <li><a href="#">Rechercher un stage</a></li>
