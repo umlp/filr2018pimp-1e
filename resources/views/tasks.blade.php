@@ -15,12 +15,13 @@
                                 <td class="table-text"><div>Google</div></td>
                                 <td>
                                     <button type="button" class="btn btn-success">
+                                        <i class="fa fa-btn fa-sort-asc" aria-hidden="true"></i>
                                         Rank up
                                     </button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger">
-                                        <i class="fa fa-btn fa-trash"></i>
+                                        <i class="fa fa-btn fa-sort-desc"></i>
                                         Rank down
                                     </button>
                                 </td>
