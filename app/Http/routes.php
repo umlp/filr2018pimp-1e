@@ -48,12 +48,22 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     /**
-     * Add New Task
+     * Up vote
      */
     Route::get('/entreprise/up/{id}', function ($id) {
         $rg = Entreprise::findOrFail($id)->rang;
         Entreprise::where('rang', $rg-1)->increment('rang');
         Entreprise::findOrFail($id)->decrement('rang');
+        return redirect('/');
+    });
+
+    /**
+     * Down vote
+     */
+    Route::get('/entreprise/down/{id}', function ($id) {
+        $rg = Entreprise::findOrFail($id)->rang;
+        Entreprise::where('rang', $rg+1)->decrement('rang');
+        Entreprise::findOrFail($id)->increment('rang');
         return redirect('/');
     });
 
