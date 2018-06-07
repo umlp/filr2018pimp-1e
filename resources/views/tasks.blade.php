@@ -49,7 +49,7 @@
                                         @if ($entreprise->rang != 1)
                                             <form action="/entreprise/up/{{ $entreprise->id }}" method="POST">
                                                 {{ csrf_field() }}
-                                                <button type="button" class="btn btn-success">
+                                                <button type="submit" class="btn btn-success">
                                                     <i class="fa fa-btn fa-sort-asc" aria-hidden="true"></i>
                                                     Rank up
                                                 </button>
@@ -60,7 +60,7 @@
                                         @if ($entreprise->rang != 9)
                                             <form action="/entreprise/down/{{ $entreprise->id }}" method="POST">
                                                 {{ csrf_field() }}
-                                                <button type="button" class="btn btn-danger">
+                                                <button type="submit" class="btn btn-danger">
                                                     <i class="fa fa-btn fa-sort-desc"></i>
                                                     Rank down
                                                 </button>
