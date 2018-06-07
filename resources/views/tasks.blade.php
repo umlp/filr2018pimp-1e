@@ -29,77 +29,36 @@
 @endsection
 
 @section('content')
-    <!-- Create Task Form... -->
-    <!-- Bootstrap Boilerplate... -->
-
-    <div class="panel-body">
-        <!-- Display Validation Errors -->
-        @include('common.errors')
-
-        <!-- New Task Form -->
-        <form action="/entreprise" method="POST" class="form-horizontal">
-            {{ csrf_field() }}
-
-            <!-- Task Name -->
-            <div class="form-group">
-                <label for="task" class="col-sm-3 control-label">Task</label>
-
-                <div class="col-sm-6">
-                    <input type="text" name="name" id="entreprise-name" class="form-control">
-                </div>
-
-                <div class="col-sm-6">
-                    <input type="text" name="rang" id="entreprise-rang" class="form-control">
-                </div>
-            </div>
-
-            <!-- Add Task Button -->
-            <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Add Entreprise
-                    </button>
-                </div>
-            </div>
-        </form>
-
-        <!-- Current Tasks -->
-        @if (count($entreprises) > 0)
+    <div class="container">
+        <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Current Entreprises
+                    Les entreprises
                 </div>
-
                 <div class="panel-body">
                     <table class="table table-striped task-table">
-
-                        <!-- Table Headings -->
-                        <thead>
-                            <th>Entreprises</th>
-                            <th>&nbsp;</th>
-                        </thead>
-
-                        <!-- Table Body -->
                         <tbody>
                             @foreach ($entreprises as $entreprise)
                                 <tr>
-                                    <!-- Entreprise Name -->
-                                    <td class="table-text">
-                                        <div>{{ $entreprise->name }}</div>
-                                    </td>
-
-                                    <!-- Entreprise Rang -->
-                                    <td class="table-text">
-                                        <div>{{ $entreprise->rang }}</div>
-                                    </td>
-
-                                    <!-- Delete Button -->
+                                    <td class="table-text"><div>{{ $entreprise->rang }}</div></td>
+                                    <td class="table-text"><div>{{ $entreprise->name }}</div></td>
                                     <td>
-                                        <form action="/entreprise/{{ $entreprise->id }}" method="POST">
+                                        
+                                    </td>
+                                    <td>
+                                        <form action="/entreprise/up/{{ $entreprise->id }}" method="POST">
                                             {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-
-                                            <button>Delete Task</button>
+                                            <button type="button" class="btn btn-success">
+                                                <i class="fa fa-btn fa-sort-asc" aria-hidden="true"></i>
+                                                Rank up
+                                            </button>
+                                        </form>
+                                        <form action="/entreprise/down/{{ $entreprise->id }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <button type="button" class="btn btn-danger">
+                                                <i class="fa fa-btn fa-sort-desc"></i>
+                                                Rank down
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>
@@ -108,6 +67,6 @@
                     </table>
                 </div>
             </div>
-        @endif
+        </div>
     </div>
 @endsection
