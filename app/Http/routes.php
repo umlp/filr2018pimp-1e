@@ -50,7 +50,7 @@ Route::group(['middleware' => ['web']], function () {
     /**
      * Add New Task
      */
-    Route::put('/entreprise/up/{id}', function (Request $request) {
+    Route::get('/entreprise/up/{id}', function (Request $request) {
         /*$rg = Entreprise::findOrFail($id)->rang;
         Entreprise::where('rang', $rg)->increment('rang');*/
         $e = Entreprise::find($id);
