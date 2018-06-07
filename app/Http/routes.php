@@ -19,7 +19,7 @@ Route::group(['middleware' => ['web']], function () {
      * Show Task Dashboard
      */
     Route::get('/', function () {
-        return view('entreprises', [
+        return view('tasks', [
             'entreprises' => Entreprise::orderBy('rang', 'asc')->get()
         ]);
     });
