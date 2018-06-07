@@ -47,24 +47,22 @@
                                     </td>
                                     <td>
                                         @if ($entreprise->rang != 1)
-                                            <form action="/entreprise/up/{{ $entreprise->id }}" method="GET">
-                                                {{ csrf_field() }}
+                                            <a href="/entreprise/up/{{ $entreprise->id }}">
                                                 <button type="submit" class="btn btn-success">
                                                     <i class="fa fa-btn fa-sort-asc" aria-hidden="true"></i>
                                                     Rank up
                                                 </button>
-                                            </form>
+                                            </a>
                                         @endif
                                     </td>
                                     <td>
                                         @if ($entreprise->rang != 9)
-                                            <form action="/entreprise/down/{{ $entreprise->id }}" method="GET">
-                                                {{ csrf_field() }}
+                                            <a href="/entreprise/down/{{ $entreprise->id }}">
                                                 <button type="submit" class="btn btn-danger">
                                                     <i class="fa fa-btn fa-sort-desc"></i>
                                                     Rank down
                                                 </button>
-                                            </form>
+                                            </a>
                                         @endif
                                     </td>
                                 </tr>
