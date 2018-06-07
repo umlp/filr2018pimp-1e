@@ -20,7 +20,7 @@ Route::group(['middleware' => ['web']], function () {
      */
     Route::get('/', function () {
         return view('tasks', [
-            'tasks' => Task::orderBy('created_at', 'asc')->get()
+            'tasks' => Task::orderBy('rang', 'asc')->get()
         ]);
     });
 
@@ -40,6 +40,7 @@ Route::group(['middleware' => ['web']], function () {
 
         $task = new Task;
         $task->name = $request->name;
+        $task->rang = $request->rang;
         $task->save();
 
         return redirect('/');
