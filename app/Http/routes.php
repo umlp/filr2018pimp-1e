@@ -48,6 +48,17 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     /**
+     * Add New Task
+     */
+    Route::post('/entreprise/up/{id}', function (Request $request) {
+        $rg = Entreprise::findOrFail($id)->rang;
+        Entreprise::where('rang', $rg)->increment('rang');
+        Entreprise::findOrFail($id)->decrement('rang');
+
+        return redirect('/');
+    });
+
+    /**
      * Delete Task
      */
     Route::delete('/entreprise/{id}', function ($id) {
