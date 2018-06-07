@@ -41,6 +41,7 @@ Route::group(['middleware' => ['web']], function () {
 
         $entreprise = new Entreprise;
         $entreprise->name = $request->name;
+        $entreprise->rang = $request->rang;
         $entreprise->save();
 
         return redirect('/');
