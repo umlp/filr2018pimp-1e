@@ -45,7 +45,11 @@
                 <label for="task" class="col-sm-3 control-label">Task</label>
 
                 <div class="col-sm-6">
-                    <input type="text" name="name" id="task-name" class="form-control">
+                    <input type="text" name="name" id="entreprise-name" class="form-control">
+                </div>
+
+                <div class="col-sm-6">
+                    <input type="text" name="rang" id="entreprise-rang" class="form-control">
                 </div>
             </div>
 
@@ -53,17 +57,17 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Add Task
+                        <i class="fa fa-plus"></i> Add Entreprise
                     </button>
                 </div>
             </div>
         </form>
 
         <!-- Current Tasks -->
-        @if (count($tasks) > 0)
+        @if (count($entreprises) > 0)
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Current Tasks
+                    Current Entreprises
                 </div>
 
                 <div class="panel-body">
@@ -71,17 +75,22 @@
 
                         <!-- Table Headings -->
                         <thead>
-                            <th>Task</th>
+                            <th>Entreprises</th>
                             <th>&nbsp;</th>
                         </thead>
 
                         <!-- Table Body -->
                         <tbody>
-                            @foreach ($tasks as $task)
+                            @foreach ($entreprises as $entreprise)
                                 <tr>
-                                    <!-- Task Name -->
+                                    <!-- Entreprise Name -->
                                     <td class="table-text">
-                                        <div>{{ $task->name }}</div>
+                                        <div>{{ $entreprise->name }}</div>
+                                    </td>
+
+                                    <!-- Entreprise Rang -->
+                                    <td class="table-text">
+                                        <div>{{ $entreprise->rang }}</div>
                                     </td>
 
                                     <!-- Delete Button -->

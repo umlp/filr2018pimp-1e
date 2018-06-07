@@ -11,7 +11,7 @@
 |
 */
 
-use App\Task;
+use App\Entreprise;
 use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['web']], function () {
@@ -19,17 +19,18 @@ Route::group(['middleware' => ['web']], function () {
      * Show Task Dashboard
      */
     Route::get('/', function () {
-        return view('tasks', [
-            'tasks' => Task::orderBy('created_at', 'asc')->get()
+        return view('entreprises', [
+            'entreprises' => Entreprise::orderBy('rang', 'asc')->get()
         ]);
     });
 
     /**
      * Add New Task
      */
-    Route::post('/task', function (Request $request) {
+    Route::post('/entreprises', function (Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
+            'rang' => 'required|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -38,9 +39,9 @@ Route::group(['middleware' => ['web']], function () {
                 ->withErrors($validator);
         }
 
-        $task = new Task;
-        $task->name = $request->name;
-        $task->save();
+        $entreprise = new Entreprise;
+        $entreprise->name = $request->name;
+        $entreprise->save();
 
         return redirect('/');
     });
@@ -48,8 +49,8 @@ Route::group(['middleware' => ['web']], function () {
     /**
      * Delete Task
      */
-    Route::delete('/task/{id}', function ($id) {
-        Task::findOrFail($id)->delete();
+    Route::delete('/entreprise/{id}', function ($id) {
+        Entreprise::findOrFail($id)->delete();
 
         return redirect('/');
     });
