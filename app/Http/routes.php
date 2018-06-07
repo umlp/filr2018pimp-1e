@@ -27,7 +27,7 @@ Route::group(['middleware' => ['web']], function () {
     /**
      * Add New Task
      */
-    Route::post('/entreprises', function (Request $request) {
+    Route::post('/entreprise', function (Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'rang' => 'required|max:255',
