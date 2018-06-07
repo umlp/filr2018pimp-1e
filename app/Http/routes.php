@@ -53,7 +53,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/entreprise/up/{id}', function (Request $request) {
         /*$rg = Entreprise::findOrFail($id)->rang;
         Entreprise::where('rang', $rg)->increment('rang');*/
-        Entreprise::findOrFail($id);
+        Entreprise::find($id);
 
         return redirect('/');
     });
